@@ -21,6 +21,11 @@ Syntax highlighted code block
 1. Numbered
 2. List
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
