@@ -35,7 +35,7 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 
 | First Header  | Second Header |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
+| [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  | Content Cell  |
 | Content Cell  | Content Cell  |
 
 ### Jekyll Themes
