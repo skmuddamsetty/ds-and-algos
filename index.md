@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Data Structures and Algorithms
 
 You can use the [editor on GitHub](https://github.com/skmuddamsetty/ds-and-algos/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
@@ -6,11 +6,20 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 ### List of Problems
 
-| Problem  | Second Header |
+| Problem #  | Problem Title |
 | ------------- | ------------- |
-| [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  | Content Cell  |
+| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
 | Content Cell  | Content Cell  |
 
+### Longest Increasing Subsequence
+
+Find the Longest Increasing Subsequence in the given array
+
+```
+  function sample(){
+    console.log('hello world');
+  }
+```
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
