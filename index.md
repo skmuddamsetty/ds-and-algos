@@ -53,24 +53,31 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 | 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
 | Content Cell  | Content Cell  |
 
-#### Longest Increasing Subsequence
+### Array Problems
 
-Find the Longest Increasing Subsequence in the given array
+#### Find pair with given sum in the array
 
 ```
-  /**
- * https://www.techiedelight.com/bit-hacks-part-1-basic/#P1
- * @param {Number} num
+/**
  *
- * Using & operator
+ *
+ * @param {Number} a
+ * @param {Number} b
  */
-const checkEvenOrOdd = (num) => {
-  let binaryNumber = num.toString(2);
-  console.log(binaryNumber);
-  return (num & 1) === 1 ? 'odd' : 'even';
+const findPairWithGivenSum = (A, sum) => {
+  let map = {};
+  let index = 0;
+  let diff;
+  for (let num of A) {
+    diff = sum - num;
+    if (map[diff] !== undefined) {
+      console.log(`[${map[diff]}, ${index}]`);
+      return;
+    }
+    map[num] = index;
+    index++;
+  }
 };
-
-module.exports = { checkEvenOrOdd };
 
 ```
 ### Markdown
