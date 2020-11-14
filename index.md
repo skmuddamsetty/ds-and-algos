@@ -53,7 +53,7 @@
 
 >#### Find pair with given sum in the array
 
-```markdown
+```javascript
 /**
  * @param {Array} A This is input array
  * @param {Number} sum this is equal to target sum
