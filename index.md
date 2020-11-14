@@ -2,58 +2,58 @@
 
 ### Linked List Problems
 
-| Problem #  | Problem Title |
-| ------------- | ------------- |
-| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
-| Content Cell  | Content Cell  |
+| Problem #    | Problem Title                                                                      |
+| ------------ | ---------------------------------------------------------------------------------- |
+| 1            | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) |
+| Content Cell | Content Cell                                                                       |
 
 ### Binary Tree Problems
 
-| Problem #  | Problem Title |
-| ------------- | ------------- |
-| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
-| Content Cell  | Content Cell  |
+| Problem #    | Problem Title                                                                      |
+| ------------ | ---------------------------------------------------------------------------------- |
+| 1            | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) |
+| Content Cell | Content Cell                                                                       |
 
 ### Binary Search Tree Problems
 
-| Problem #  | Problem Title |
-| ------------- | ------------- |
-| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
-| Content Cell  | Content Cell  |
+| Problem #    | Problem Title                                                                      |
+| ------------ | ---------------------------------------------------------------------------------- |
+| 1            | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) |
+| Content Cell | Content Cell                                                                       |
 
 ### Dynamic Programming Problems
 
-| Problem #  | Problem Title |
-| ------------- | ------------- |
-| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
-| Content Cell  | Content Cell  |
+| Problem #    | Problem Title                                                                      |
+| ------------ | ---------------------------------------------------------------------------------- |
+| 1            | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) |
+| Content Cell | Content Cell                                                                       |
 
 ### LeetCode Problems
 
-| Problem #  | Problem Title |
-| ------------- | ------------- |
-| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
-| Content Cell  | Content Cell  |
+| Problem #    | Problem Title                                                                      |
+| ------------ | ---------------------------------------------------------------------------------- |
+| 1            | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) |
+| Content Cell | Content Cell                                                                       |
 
 ### String Problems
 
-| Problem #  | Problem Title |
-| ------------- | ------------- |
-| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
-| Content Cell  | Content Cell  |
+| Problem #    | Problem Title                                                                      |
+| ------------ | ---------------------------------------------------------------------------------- |
+| 1            | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) |
+| Content Cell | Content Cell                                                                       |
 
 ### Array Problems
 
-| Problem #  | Problem Title |
-| ------------- | ------------- |
-| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
-| Content Cell  | Content Cell  |
+| Problem #    | Problem Title                                                                      |
+| ------------ | ---------------------------------------------------------------------------------- |
+| 1            | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) |
+| Content Cell | Content Cell                                                                       |
 
 ### Array Problems
 
->#### Find pair with given sum in the array
+> #### Find pair with given sum in the array
 
-```markdown
+```javascript
 /**
  * @param {Array} A This is input array
  * @param {Number} sum this is equal to target sum
@@ -69,7 +69,7 @@ const findPairWithGivenSum = (A, sum) => {
     // if an element in the array is found with that value
     // a pair is found which makes the current sum
     if (map[diff] !== undefined) {
-      return [map[diff],index];
+      return [map[diff], index];
     }
     // storing the num as key and index as value to keep track of the index
     // of the number we have found during traversal
