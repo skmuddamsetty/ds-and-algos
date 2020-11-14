@@ -45,7 +45,7 @@
 
 | Problem # | Problem Title                         |
 | --------- | ------------------------------------- |
-| 1         | Find pair with given sum in the array |
+| 1         | [Find pair with given sum in the array](https://github.com/skmuddamsetty/ds-and-algos/blob/gh-pages/index.md#1-find-pair-with-given-sum-in-the-array) |
 
 ## Binary Tree Problems Solutions
 
