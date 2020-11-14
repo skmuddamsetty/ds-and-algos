@@ -55,7 +55,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 ### Array Problems
 
-#### Find pair with given sum in the array
+>#### Find pair with given sum in the array
 
 ```javascript
 /**
