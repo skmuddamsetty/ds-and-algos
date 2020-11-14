@@ -58,9 +58,20 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 Find the Longest Increasing Subsequence in the given array
 
 ```
-  function sample(){
-    console.log('hello world');
-  }
+  /**
+ * https://www.techiedelight.com/bit-hacks-part-1-basic/#P1
+ * @param {Number} num
+ *
+ * Using & operator
+ */
+const checkEvenOrOdd = (num) => {
+  let binaryNumber = num.toString(2);
+  console.log(binaryNumber);
+  return (num & 1) === 1 ? 'odd' : 'even';
+};
+
+module.exports = { checkEvenOrOdd };
+
 ```
 ### Markdown
 
