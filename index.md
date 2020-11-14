@@ -61,20 +61,21 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 /**
  *
  *
- * @param {Number} a
- * @param {Number} b
+ * @param {Array} A This is input array
+ * @param {Number} sum this is equal to target sum
+ * @return {Array} with indexes in array which will be equal to given sum
  */
 const findPairWithGivenSum = (A, sum) => {
+  // map helps in storing the value at that index
   let map = {};
   let index = 0;
-  let diff;
-  for (let num of A) {
-    diff = sum - num;
-    if (map[diff] !== undefined) {
-      console.log(`[${map[diff]}, ${index}]`);
-      return;
+  let currDiff;
+  for (let currNum of A) {
+    currDiff = sum - currNum;
+    if (map[currDiff] !== undefined) {
+      return [map[currDiff],index];
     }
-    map[num] = index;
+    map[currNum] = index;
     index++;
   }
 };
