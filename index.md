@@ -9,10 +9,9 @@
 
 ### Binary Tree Problems
 
-| Problem #    | Problem Title                                                                      |
-| ------------ | ---------------------------------------------------------------------------------- |
-| 1            | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) |
-| Content Cell | Content Cell                                                                       |
+| Problem # | Problem Title           |
+| --------- | ----------------------- |
+| 1         | Insert Into Binary Tree |
 
 ### Binary Search Tree Problems
 
@@ -42,16 +41,19 @@
 | 1            | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) |
 | Content Cell | Content Cell                                                                       |
 
-### Array Problems
+## Array Problems
 
-| Problem #    | Problem Title                                                                      |
-| ------------ | ---------------------------------------------------------------------------------- |
-| 1            | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) |
-| Content Cell | Content Cell                                                                       |
+| Problem # | Problem Title                         |
+| --------- | ------------------------------------- |
+| 1         | Find pair with given sum in the array |
 
-### Array Problems
+## Binary Tree Problems Solutions
 
-##### 1) Find pair with given sum in the array
+## Binary Search Tree Problems Solutions
+
+## Array Problems Solutions
+
+### 1) Find pair with given sum in the array
 
 ```javascript
 /**
@@ -80,7 +82,7 @@ const findPairWithGivenSum = (A, sum) => {
 };
 ```
 
-##### 2) Find pair with given sum in the array
+### 2) Find pair with given sum in the array
 
 ```javascript
 /**
