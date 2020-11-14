@@ -1,1 +1,4 @@
 theme: jekyll-theme-cayman
+values:
+      sidebar:
+        nav: "docs"
