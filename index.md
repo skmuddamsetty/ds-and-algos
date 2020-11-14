@@ -51,6 +51,7 @@
 
 ### Array Problems
 
+##
 > #### Find pair with given sum in the array
 
 ```javascript
@@ -79,3 +80,4 @@ const findPairWithGivenSum = (A, sum) => {
   }
 };
 ```
+##
