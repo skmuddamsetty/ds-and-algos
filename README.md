@@ -4,7 +4,49 @@ You can use the [editor on GitHub](https://github.com/skmuddamsetty/ds-and-algos
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### List of Problems
+### Linked List Problems
+
+| Problem #  | Problem Title |
+| ------------- | ------------- |
+| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
+| Content Cell  | Content Cell  |
+
+### Binary Tree Problems
+
+| Problem #  | Problem Title |
+| ------------- | ------------- |
+| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
+| Content Cell  | Content Cell  |
+
+### Binary Search Tree Problems
+
+| Problem #  | Problem Title |
+| ------------- | ------------- |
+| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
+| Content Cell  | Content Cell  |
+
+### Dynamic Programming Problems
+
+| Problem #  | Problem Title |
+| ------------- | ------------- |
+| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
+| Content Cell  | Content Cell  |
+
+### LeetCode Problems
+
+| Problem #  | Problem Title |
+| ------------- | ------------- |
+| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
+| Content Cell  | Content Cell  |
+
+### String Problems
+
+| Problem #  | Problem Title |
+| ------------- | ------------- |
+| 1  | [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)  |
+| Content Cell  | Content Cell  |
+
+### Array Problems
 
 | Problem #  | Problem Title |
 | ------------- | ------------- |
