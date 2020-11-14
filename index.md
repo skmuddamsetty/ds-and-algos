@@ -53,7 +53,7 @@
 
 >#### Find pair with given sum in the array
 
-```javascript
+```markdown
 /**
  * @param {Array} A This is input array
  * @param {Number} sum this is equal to target sum
@@ -78,3 +78,4 @@ const findPairWithGivenSum = (A, sum) => {
     index++;
   }
 };
+```
