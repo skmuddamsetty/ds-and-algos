@@ -419,3 +419,30 @@ var isSameTree = function (p, q) {
   );
 };
 ```
+
+### 125. Valid Palindrome
+
+```javascript
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function (s) {
+  s = s
+    .trim()
+    .replace(/[^a-zA-Z0-9]/g, '')
+    .toLowerCase();
+  if (s.trim().length === 0) return true;
+  let left = 0;
+  let right = s.length - 1;
+  while (left < right) {
+    if (s[left] === s[right]) {
+      left++;
+      right--;
+    } else {
+      return false;
+    }
+  }
+  return true;
+};
+```
