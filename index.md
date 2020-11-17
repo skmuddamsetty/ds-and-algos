@@ -353,7 +353,12 @@ const findPairWithGivenSum = (A, sum) => {
 
 ## LeetCode Problems
 
-### 1) Two Sum
+| Problem # | Problem Title |
+| --------- | ------------- |
+| 1         | Two Sum       |
+| 100       | Same Tree     |
+
+### 1. Two Sum
 
 ```javascript
 /**
@@ -379,4 +384,38 @@ var twoSum = function (nums, target) {
 
 console.log(twoSum([2, 7, 11, 15], 9));
 console.log(twoSum([3, 2, 4], 6));
+```
+
+### 100. Same Tree
+
+```javascript
+/**
+ * Definition for a binary tree node.
+ * @param {TreeNode} left
+ * @param {TreeNode} right
+ * @param {Number} val
+ *
+ */
+function TreeNode(val, left, right) {
+  this.val = val === undefined ? 0 : val;
+  this.left = left === undefined ? null : left;
+  this.right = right === undefined ? null : right;
+}
+
+/**
+ * @param {TreeNode} p
+ * @param {TreeNode} q
+ * @return {boolean}
+ * Time Complexity: O(n) because we travserse all nodes
+ * Space Complexity: O(n) for recursive call stack.
+ */
+var isSameTree = function (p, q) {
+  if (p === null && q === null) return true;
+  if ((p === null) | (q === null)) return false;
+  return (
+    p.val === q.val &&
+    isSameTree(p.left, q.left) &&
+    isSameTree(p.right, q.right)
+  );
+};
 ```
