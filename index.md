@@ -360,6 +360,24 @@ const findPairWithGivenSum = (A, sum) => {
 | 125       | Valid Palindrome            |
 | 199       | Binary Tree Right Side View |
 | 242       | Valid Anagram               |
+| 344       | Reverse String              |
+| 657       | Robot Return to Origin      |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
+| 242       | Valid Anagram               |
 
 ### 1. Two Sum
 
@@ -498,5 +516,53 @@ var isAnagram = function (s, t) {
     }
   }
   return true;
+};
+```
+
+### 344. Reverse String
+
+```javascript
+/**
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
+ */
+var reverseString = function (s) {
+  let left = 0;
+  let right = s.length - 1;
+  while (left < right) {
+    let temp = s[left];
+    s[left] = s[right];
+    s[right] = temp;
+    left++;
+    right--;
+  }
+};
+```
+
+### 657. Robot Return to Origin
+
+```javascript
+/**
+ * @param {string} moves
+ * @return {boolean}
+ */
+var judgeCircle = function (moves) {
+  let left = 0;
+  let right = 0;
+  let up = 0;
+  let down = 0;
+  let total = 0;
+  for (let move of moves) {
+    if (move === 'R') {
+      right++;
+    } else if (move === 'L') {
+      left++;
+    } else if (move === 'U') {
+      up++;
+    } else {
+      down++;
+    }
+  }
+  return left === right && up === down;
 };
 ```
