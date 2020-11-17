@@ -353,11 +353,13 @@ const findPairWithGivenSum = (A, sum) => {
 
 ## LeetCode Problems
 
-| Problem # | Problem Title    |
-| --------- | ---------------- |
-| 1         | Two Sum          |
-| 100       | Same Tree        |
-| 125       | Valid Palindrome |
+| Problem # | Problem Title               |
+| --------- | --------------------------- |
+| 1         | Two Sum                     |
+| 100       | Same Tree                   |
+| 125       | Valid Palindrome            |
+| 199       | Binary Tree Right Side View |
+| 242       | Valid Anagram               |
 
 ### 1. Two Sum
 
@@ -441,6 +443,57 @@ var isPalindrome = function (s) {
       left++;
       right--;
     } else {
+      return false;
+    }
+  }
+  return true;
+};
+```
+
+### 199. Binary Tree Right Side View
+
+```javascript
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var rightSideView = function (root) {
+  let map = {};
+  helper(root, 0, map);
+  return Object.values(map);
+};
+
+var helper = function (root, level, map) {
+  if (root === null) {
+    return;
+  }
+  map[level] = root.val;
+  helper(root.left, level + 1, map);
+  helper(root.right, level + 1, map);
+};
+```
+
+### 242. Valid Anagram
+
+```javascript
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function (s, t) {
+  if (s.length !== t.length) return false;
+  let a1 = new Array(26).fill(0);
+  let a2 = new Array(26).fill(0);
+  for (let char of s) {
+    a1[char.charCodeAt(0) - 97]++;
+  }
+  for (let char of t) {
+    if (a1[char.charCodeAt(0) - 97] === 0) {
+      return false;
+    }
+    a1[char.charCodeAt(0) - 97]--;
+    if (a1[char.charCodeAt(0) - 97] < 0) {
       return false;
     }
   }
