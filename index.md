@@ -353,10 +353,11 @@ const findPairWithGivenSum = (A, sum) => {
 
 ## LeetCode Problems
 
-| Problem # | Problem Title |
-| --------- | ------------- |
-| 1         | Two Sum       |
-| 100       | Same Tree     |
+| Problem # | Problem Title    |
+| --------- | ---------------- |
+| 1         | Two Sum          |
+| 100       | Same Tree        |
+| 125       | Valid Palindrome |
 
 ### 1. Two Sum
 
