@@ -361,6 +361,8 @@ const findPairWithGivenSum = (A, sum) => {
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
+ * Time Compexity: O(n) because we traverse each element once in worst case
+ * Space Complexity: O(n) for map
  */
 var twoSum = function (nums, target) {
   let map = {};
