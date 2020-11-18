@@ -364,9 +364,9 @@ const findPairWithGivenSum = (A, sum) => {
 | 657       | Robot Return to Origin         |
 | 700       | Search in a Binary Search Tree |
 | 704       | Binary Search                  |
-| 242       | Valid Anagram                  |
-| 242       | Valid Anagram                  |
-| 242       | Valid Anagram                  |
+| 876       | Middle of the Linked List      |
+| 917       | Reverse Only Letters           |
+| 1046      | Last Stone Weight              |
 | 242       | Valid Anagram                  |
 | 242       | Valid Anagram                  |
 | 242       | Valid Anagram                  |
@@ -614,4 +614,135 @@ var search = function (nums, target) {
   }
   return -1;
 };
+```
+
+### 876. Middle of the Linked List
+
+```javascript
+/**
+ * https://leetcode.com/problems/middle-of-the-linked-list/
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var middleNode = function (head) {
+  let slow = head;
+  let fast = head;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  return slow;
+};
+```
+
+### 917. Reverse Only Letters
+
+```javascript
+/**
+ * @param {string} S
+ * @return {string}
+ */
+var reverseOnlyLetters = function (S) {
+  S = S.split('');
+  let left = 0;
+  let right = S.length - 1;
+  while (left < right) {
+    if (S[left].match(/[a-zA-Z]/) && S[right].match(/[a-zA-Z]/)) {
+      let temp = S[left];
+      S[left] = S[right];
+      S[right] = temp;
+      left++;
+      right--;
+    } else if (!S[left].match(/[a-zA-Z]/)) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+  return S.join('');
+};
+```
+
+### 1046. Last Stone Weight
+
+```javascript
+/**
+ * @param {number[]} stones
+ * @return {number}
+ */
+var lastStoneWeight = function (stones) {
+  let maxHeap = new MaxBinaryHeap();
+  for (let stone of stones) {
+    maxHeap.insert(stone);
+  }
+  console.log(maxHeap);
+  while (maxHeap.values.length > 1) {
+    let stone1 = maxHeap.extractMax();
+    let stone2 = maxHeap.extractMax();
+    console.log(stone1, stone2);
+    if (stone1 !== stone2) {
+      maxHeap.insert(Math.abs(stone1 - stone2));
+    }
+  }
+  if (maxHeap.values.length) {
+    return maxHeap.values[0];
+  } else {
+    return 0;
+  }
+};
+
+class MaxBinaryHeap {
+  constructor() {
+    this.values = [];
+  }
+
+  insert(val) {
+    this.values.push(val);
+    this.bubbleUp();
+  }
+
+  bubbleUp() {
+    let currVal = this.values[this.values.length - 1];
+    let currIndex = this.values.length - 1;
+    let parentIndex = Math.floor((this.values.length - 2) / 2);
+    while (this.values[parentIndex] < currVal) {
+      if (currVal > this.values[parentIndex]) {
+        this.values[currIndex] = this.values[parentIndex];
+        this.values[parentIndex] = currVal;
+        currIndex = parentIndex;
+      }
+      parentIndex = Math.floor(currIndex - 1 / 2);
+    }
+  }
+
+  extractMax() {
+    let ans = this.values[0];
+    this.sinkDown();
+    return ans;
+  }
+
+  sinkDown() {
+    this.values[0] = this.values[this.values.length - 1];
+    let currSinkDownVal = this.values.pop();
+    let currParentIndex = 0;
+    let child1Idx = 2 * currParentIndex + 1;
+    let child2Idx = 2 * currParentIndex + 2;
+    while (
+      currSinkDownVal < this.values[child2Idx] ||
+      currSinkDownVal < this.values[child1Idx]
+    ) {
+      if (this.values[child2Idx] > this.values[child1Idx]) {
+        this.values[currParentIndex] = this.values[child2Idx];
+        this.values[child2Idx] = currSinkDownVal;
+        currParentIndex = child2Idx;
+      } else {
+        this.values[currParentIndex] = this.values[child1Idx];
+        this.values[child1Idx] = currSinkDownVal;
+        currParentIndex = child1Idx;
+      }
+      child1Idx = 2 * currParentIndex + 1;
+      child2Idx = 2 * currParentIndex + 2;
+    }
+  }
+}
 ```
