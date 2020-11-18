@@ -353,31 +353,31 @@ const findPairWithGivenSum = (A, sum) => {
 
 ## LeetCode Problems
 
-| Problem # | Problem Title               |
-| --------- | --------------------------- |
-| 1         | Two Sum                     |
-| 100       | Same Tree                   |
-| 125       | Valid Palindrome            |
-| 199       | Binary Tree Right Side View |
-| 242       | Valid Anagram               |
-| 344       | Reverse String              |
-| 657       | Robot Return to Origin      |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
-| 242       | Valid Anagram               |
+| Problem # | Problem Title                  |
+| --------- | ------------------------------ |
+| 1         | Two Sum                        |
+| 100       | Same Tree                      |
+| 125       | Valid Palindrome               |
+| 199       | Binary Tree Right Side View    |
+| 242       | Valid Anagram                  |
+| 344       | Reverse String                 |
+| 657       | Robot Return to Origin         |
+| 700       | Search in a Binary Search Tree |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
+| 242       | Valid Anagram                  |
 
 ### 1. Two Sum
 
@@ -564,5 +564,28 @@ var judgeCircle = function (moves) {
     }
   }
   return left === right && up === down;
+};
+```
+
+### 700. Search in a Binary Search Tree
+
+```javascript
+/**
+ * @param {TreeNode} root
+ * @param {number} val
+ * @return {TreeNode}
+ */
+var searchBST = function (root, val) {
+  if (root === null) {
+    return null;
+  }
+  if (root.val === val) {
+    return root;
+  }
+  if (root.val > val) {
+    return searchBST(root.left, val);
+  } else {
+    return searchBST(root.right, val);
+  }
 };
 ```
