@@ -363,7 +363,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 344       | Reverse String                 |
 | 657       | Robot Return to Origin         |
 | 700       | Search in a Binary Search Tree |
-| 242       | Valid Anagram                  |
+| 704       | Binary Search                  |
 | 242       | Valid Anagram                  |
 | 242       | Valid Anagram                  |
 | 242       | Valid Anagram                  |
@@ -587,5 +587,31 @@ var searchBST = function (root, val) {
   } else {
     return searchBST(root.right, val);
   }
+};
+```
+
+### 704. Binary Search
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var search = function (nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (nums[mid] === target) {
+      return mid;
+    }
+    if (nums[mid] >= target) {
+      right = right - 1;
+    } else {
+      left = left + 1;
+    }
+  }
+  return -1;
 };
 ```
