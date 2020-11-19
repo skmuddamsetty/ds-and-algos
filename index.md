@@ -362,6 +362,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 242       | Valid Anagram                       |
 | 344       | Reverse String                      |
 | 349       | Intersection of Two Arrays          |
+| 350       | Intersection of Two Arrays II       |
 | 657       | Robot Return to Origin              |
 | 700       | Search in a Binary Search Tree      |
 | 704       | Binary Search                       |
@@ -560,6 +561,30 @@ var intersection = function (nums1, nums2) {
     }
   }
   return Array.from(resultSet);
+};
+```
+
+### 350. Intersection of Two Arrays II
+
+```javascript
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersect = function (nums1, nums2) {
+  let hashMap = {};
+  let results = [];
+  for (let num of nums1) {
+    hashMap[num] = hashMap[num] + 1 || 1;
+  }
+  for (let num of nums2) {
+    if (hashMap[num] > 0) {
+      results.push(num);
+      hashMap[num]--;
+    }
+  }
+  return results;
 };
 ```
 
