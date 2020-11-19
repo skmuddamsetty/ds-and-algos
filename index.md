@@ -373,7 +373,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 1185      | Day of the Week                                      |
 | 1213      | Intersection of Three Sorted Arrays                  |
 | 1299      | Replace Elements with Greatest Element on Right Side |
-| 242       | Valid Anagram                                        |
+| 1331      | Rank Transform of an Array                           |
 | 242       | Valid Anagram                                        |
 | 242       | Valid Anagram                                        |
 | 242       | Valid Anagram                                        |
@@ -881,5 +881,33 @@ var replaceElements = function (arr) {
     results[i] = max;
   }
   return results;
+};
+```
+
+### 1331. Rank Transform of an Array
+
+```javascript
+/**
+ * @param {number[]} arr
+ * @return {number[]}
+ */
+var arrayRankTransform = function (arr) {
+  // clone the array into temp variable
+  let temp = [...arr];
+  let map = {};
+  // sort the cloned array o(nlogn)
+  temp.sort((a, b) => a - b);
+  let index = 1;
+  // loop through the sorted array and assign value to each num starting from 1
+  for (let num of temp) {
+    if (map[num] === undefined) {
+      map[num] = index;
+      index++;
+    }
+  }
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = map[arr[i]];
+  }
+  return arr;
 };
 ```
