@@ -375,7 +375,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 1299      | Replace Elements with Greatest Element on Right Side |
 | 1331      | Rank Transform of an Array                           |
 | 1351      | Count Negative Numbers in a Sorted Matrix            |
-| 242       | Valid Anagram                                        |
+| 1360      | Number of Days Between Two Dates                     |
 | 242       | Valid Anagram                                        |
 | 242       | Valid Anagram                                        |
 | 242       | Valid Anagram                                        |
@@ -950,5 +950,26 @@ var countNegatives_sol_2 = function (grid) {
     }
   }
   return negatives;
+};
+```
+
+### 1360. Number of Days Between Two Dates
+
+```javascript
+/**
+ * @param {string} date1
+ * @param {string} date2
+ * @return {number}
+ */
+var daysBetweenDates = function (date1, date2) {
+  /**
+  1) Define two dates using new Date().
+  2) Calculate the time difference of two dates using date2.getTime() – date1.getTime();
+  3) Calculate the no. of days between two dates, divide the time difference of both the dates by no. of milliseconds in a day (1000*60*60*24)
+  */
+  date1 = new Date(date1);
+  date2 = new Date(date2);
+  let diff_in_time = Math.abs(date2.getTime() - date1.getTime());
+  return diff_in_time / (1000 * 3600 * 24);
 };
 ```
