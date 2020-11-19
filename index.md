@@ -374,7 +374,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 1213      | Intersection of Three Sorted Arrays                  |
 | 1299      | Replace Elements with Greatest Element on Right Side |
 | 1331      | Rank Transform of an Array                           |
-| 242       | Valid Anagram                                        |
+| 1351      | Count Negative Numbers in a Sorted Matrix            |
 | 242       | Valid Anagram                                        |
 | 242       | Valid Anagram                                        |
 | 242       | Valid Anagram                                        |
@@ -909,5 +909,46 @@ var arrayRankTransform = function (arr) {
     arr[i] = map[arr[i]];
   }
   return arr;
+};
+```
+
+### 1351. Count Negative Numbers in a Sorted Matrix
+
+```javascript
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ * Naive Solution
+ */
+var countNegatives = function (grid) {
+  let negatives = 0;
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
+      if (grid[i][j] < 0) {
+        negatives++;
+      }
+    }
+  }
+  return negatives;
+};
+
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ * Better than naive solution
+ */
+var countNegatives_sol_2 = function (grid) {
+  let row = 0;
+  let col = grid[0].length - 1;
+  let negatives = 0;
+  while (row < grid.length && col >= 0) {
+    if (grid[row][col] < 0) {
+      negatives = negatives + grid.length - row;
+      col--;
+    } else {
+      row++;
+    }
+  }
+  return negatives;
 };
 ```
