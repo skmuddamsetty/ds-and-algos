@@ -367,8 +367,8 @@ const findPairWithGivenSum = (A, sum) => {
 | 876       | Middle of the Linked List      |
 | 917       | Reverse Only Letters           |
 | 1046      | Last Stone Weight              |
-| 242       | Valid Anagram                  |
-| 242       | Valid Anagram                  |
+| 1119      | Remove Vowels from a String    |
+| 1185      | Day of the Week                |
 | 242       | Valid Anagram                  |
 | 242       | Valid Anagram                  |
 | 242       | Valid Anagram                  |
@@ -745,4 +745,40 @@ class MaxBinaryHeap {
     }
   }
 }
+```
+
+### 1119. Remove Vowels from a String
+
+```javascript
+/**
+ * @param {string} S
+ * @return {string}
+ */
+var removeVowels = function (S) {
+  return S.replace(/[aeiou]/g, '');
+};
+```
+
+### 1185. Day of the Week
+
+```javascript
+/**
+ * @param {number} day
+ * @param {number} month
+ * @param {number} year
+ * @return {string}
+ */
+var dayOfTheWeek = function (day, month, year) {
+  var d = new Date(year, month - 1, day);
+  console.log(d);
+  var weekday = new Array(7);
+  weekday[0] = 'Sunday';
+  weekday[1] = 'Monday';
+  weekday[2] = 'Tuesday';
+  weekday[3] = 'Wednesday';
+  weekday[4] = 'Thursday';
+  weekday[5] = 'Friday';
+  weekday[6] = 'Saturday';
+  return weekday[d.getDay()];
+};
 ```
