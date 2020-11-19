@@ -432,6 +432,25 @@ var reverse = function (x) {
 };
 ```
 
+### 9. Palindrome Number
+
+```javascript
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function (x) {
+  if (x < 0) return false;
+  let rem = 0;
+  let temp = x;
+  while (x > 0) {
+    rem = rem * 10 + (x % 10);
+    x = Math.floor(x / 10);
+  }
+  return rem === temp;
+};
+```
+
 ### 100. Same Tree
 
 ```javascript
