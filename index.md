@@ -935,7 +935,7 @@ var countNegatives = function (grid) {
 /**
  * @param {number[][]} grid
  * @return {number}
- * Better than naive solution
+ * Better than naive solution and taking the advantage of the fact that the grid is in sorted manner
  */
 var countNegatives_sol_2 = function (grid) {
   let row = 0;
