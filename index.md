@@ -356,6 +356,7 @@ const findPairWithGivenSum = (A, sum) => {
 | Problem # | Problem Title                                        |
 | --------- | ---------------------------------------------------- |
 | 1         | Two Sum                                              |
+| 7         | Reverse Integer                                      |
 | 100       | Same Tree                                            |
 | 125       | Valid Palindrome                                     |
 | 199       | Binary Tree Right Side View                          |
@@ -407,6 +408,28 @@ var twoSum = function (nums, target) {
 
 console.log(twoSum([2, 7, 11, 15], 9));
 console.log(twoSum([3, 2, 4], 6));
+```
+
+### 7. Reverse Integer
+
+```javascript
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function (x) {
+  let rem = 0;
+  let temp = Math.abs(x);
+  while (temp > 0) {
+    rem = rem * 10 + (temp % 10);
+    temp = Math.floor(temp / 10);
+  }
+  // range of a 32-bit integer is between -2147483648 and 2147483648
+  if (Math.abs(rem) > 2147483648) {
+    return 0;
+  }
+  return x < 0 ? rem * -1 : rem;
+};
 ```
 
 ### 100. Same Tree
