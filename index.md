@@ -353,33 +353,33 @@ const findPairWithGivenSum = (A, sum) => {
 
 ## LeetCode Problems
 
-| Problem # | Problem Title                       |
-| --------- | ----------------------------------- |
-| 1         | Two Sum                             |
-| 100       | Same Tree                           |
-| 125       | Valid Palindrome                    |
-| 199       | Binary Tree Right Side View         |
-| 242       | Valid Anagram                       |
-| 344       | Reverse String                      |
-| 349       | Intersection of Two Arrays          |
-| 350       | Intersection of Two Arrays II       |
-| 657       | Robot Return to Origin              |
-| 700       | Search in a Binary Search Tree      |
-| 704       | Binary Search                       |
-| 876       | Middle of the Linked List           |
-| 917       | Reverse Only Letters                |
-| 1046      | Last Stone Weight                   |
-| 1119      | Remove Vowels from a String         |
-| 1185      | Day of the Week                     |
-| 1213      | Intersection of Three Sorted Arrays |
-| 242       | Valid Anagram                       |
-| 242       | Valid Anagram                       |
-| 242       | Valid Anagram                       |
-| 242       | Valid Anagram                       |
-| 242       | Valid Anagram                       |
-| 242       | Valid Anagram                       |
-| 242       | Valid Anagram                       |
-| 242       | Valid Anagram                       |
+| Problem # | Problem Title                                        |
+| --------- | ---------------------------------------------------- |
+| 1         | Two Sum                                              |
+| 100       | Same Tree                                            |
+| 125       | Valid Palindrome                                     |
+| 199       | Binary Tree Right Side View                          |
+| 242       | Valid Anagram                                        |
+| 344       | Reverse String                                       |
+| 349       | Intersection of Two Arrays                           |
+| 350       | Intersection of Two Arrays II                        |
+| 657       | Robot Return to Origin                               |
+| 700       | Search in a Binary Search Tree                       |
+| 704       | Binary Search                                        |
+| 876       | Middle of the Linked List                            |
+| 917       | Reverse Only Letters                                 |
+| 1046      | Last Stone Weight                                    |
+| 1119      | Remove Vowels from a String                          |
+| 1185      | Day of the Week                                      |
+| 1213      | Intersection of Three Sorted Arrays                  |
+| 1299      | Replace Elements with Greatest Element on Right Side |
+| 242       | Valid Anagram                                        |
+| 242       | Valid Anagram                                        |
+| 242       | Valid Anagram                                        |
+| 242       | Valid Anagram                                        |
+| 242       | Valid Anagram                                        |
+| 242       | Valid Anagram                                        |
+| 242       | Valid Anagram                                        |
 
 ### 1. Two Sum
 
@@ -862,5 +862,24 @@ var arraysIntersection = function (arr1, arr2, arr3) {
   }
 
   return result;
+};
+```
+
+### 1299. Replace Elements with Greatest Element on Right Side
+
+```javascript
+/**
+ * @param {number[]} arr
+ * @return {number[]}
+ */
+var replaceElements = function (arr) {
+  let results = new Array(arr.length);
+  let max = Number.MIN_VALUE;
+  results[arr.length - 1] = -1;
+  for (let i = arr.length - 2; i >= 0; i--) {
+    max = Math.max(max, arr[i + 1]);
+    results[i] = max;
+  }
+  return results;
 };
 ```
