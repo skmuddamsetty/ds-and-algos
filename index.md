@@ -353,31 +353,32 @@ const findPairWithGivenSum = (A, sum) => {
 
 ## LeetCode Problems
 
-| Problem # | Problem Title                  |
-| --------- | ------------------------------ |
-| 1         | Two Sum                        |
-| 100       | Same Tree                      |
-| 125       | Valid Palindrome               |
-| 199       | Binary Tree Right Side View    |
-| 242       | Valid Anagram                  |
-| 344       | Reverse String                 |
-| 657       | Robot Return to Origin         |
-| 700       | Search in a Binary Search Tree |
-| 704       | Binary Search                  |
-| 876       | Middle of the Linked List      |
-| 917       | Reverse Only Letters           |
-| 1046      | Last Stone Weight              |
-| 1119      | Remove Vowels from a String    |
-| 1185      | Day of the Week                |
-| 242       | Valid Anagram                  |
-| 242       | Valid Anagram                  |
-| 242       | Valid Anagram                  |
-| 242       | Valid Anagram                  |
-| 242       | Valid Anagram                  |
-| 242       | Valid Anagram                  |
-| 242       | Valid Anagram                  |
-| 242       | Valid Anagram                  |
-| 242       | Valid Anagram                  |
+| Problem # | Problem Title                       |
+| --------- | ----------------------------------- |
+| 1         | Two Sum                             |
+| 100       | Same Tree                           |
+| 125       | Valid Palindrome                    |
+| 199       | Binary Tree Right Side View         |
+| 242       | Valid Anagram                       |
+| 344       | Reverse String                      |
+| 349       | Intersection of Two Arrays          |
+| 657       | Robot Return to Origin              |
+| 700       | Search in a Binary Search Tree      |
+| 704       | Binary Search                       |
+| 876       | Middle of the Linked List           |
+| 917       | Reverse Only Letters                |
+| 1046      | Last Stone Weight                   |
+| 1119      | Remove Vowels from a String         |
+| 1185      | Day of the Week                     |
+| 1213      | Intersection of Three Sorted Arrays |
+| 242       | Valid Anagram                       |
+| 242       | Valid Anagram                       |
+| 242       | Valid Anagram                       |
+| 242       | Valid Anagram                       |
+| 242       | Valid Anagram                       |
+| 242       | Valid Anagram                       |
+| 242       | Valid Anagram                       |
+| 242       | Valid Anagram                       |
 
 ### 1. Two Sum
 
@@ -536,6 +537,29 @@ var reverseString = function (s) {
     left++;
     right--;
   }
+};
+```
+
+### 349. Intersection of Two Arrays
+
+```javascript
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersection = function (nums1, nums2) {
+  let set1 = new Set();
+  let resultSet = new Set();
+  for (let num of nums1) {
+    set1.add(num);
+  }
+  for (let num of nums2) {
+    if (set1.has(num)) {
+      resultSet.add(num);
+    }
+  }
+  return Array.from(resultSet);
 };
 ```
 
@@ -780,5 +804,38 @@ var dayOfTheWeek = function (day, month, year) {
   weekday[5] = 'Friday';
   weekday[6] = 'Saturday';
   return weekday[d.getDay()];
+};
+```
+
+### 1213. Intersection of Three Sorted Arrays
+
+```javascript
+/**
+ * @param {number[]} arr1
+ * @param {number[]} arr2
+ * @param {number[]} arr3
+ * @return {number[]}
+ */
+var arraysIntersection = function (arr1, arr2, arr3) {
+  let result = [];
+  const hashMap = {};
+
+  for (let i = 0; i < arr1.length; i++) {
+    hashMap[arr1[i]] = false;
+  }
+
+  for (let i = 0; i < arr2.length; i++) {
+    if (hashMap[arr2[i]] === false) {
+      hashMap[arr2[i]] = true;
+    }
+  }
+
+  for (let i = 0; i < arr3.length; i++) {
+    if (hashMap[arr3[i]] === true) {
+      result.push(arr3[i]);
+    }
+  }
+
+  return result;
 };
 ```
