@@ -359,6 +359,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 7         | Reverse Integer                                      |
 | 9         | Palindrome Number                                    |
 | 20        | Valid Parentheses                                    |
+| 27        | Remove Element                                       |
 | 58        | Length of Last Word                                  |
 | 62        | Unique Paths                                         |
 | 66        | Plus One                                             |
@@ -488,6 +489,28 @@ var isValid = function (s) {
     }
   }
   return stack.length === 0;
+};
+```
+
+### 27. Remove Element
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+var removeElement = function (nums, val) {
+  let pos = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      let temp = nums[i];
+      nums[i] = nums[pos];
+      nums[pos] = temp;
+      pos++;
+    }
+  }
+  return pos;
 };
 ```
 
