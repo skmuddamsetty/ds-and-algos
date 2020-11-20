@@ -360,6 +360,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 9         | Palindrome Number                                    |
 | 20        | Valid Parentheses                                    |
 | 58        | Length of Last Word                                  |
+| 62        | Unique Paths                                         |
 | 100       | Same Tree                                            |
 | 125       | Valid Palindrome                                     |
 | 199       | Binary Tree Right Side View                          |
@@ -507,6 +508,25 @@ var lengthOfLastWord = function (s) {
     }
   }
   return length;
+};
+```
+
+### 62. Unique Paths
+
+```javascript
+/**
+ * @param {number} m
+ * @param {number} n
+ * @return {number}
+ */
+var uniquePaths = function (m, n) {
+  let dp = new Array(m).fill(0).map((e) => new Array(n).fill(1));
+  for (let i = 1; i < dp.length; i++) {
+    for (let j = 1; j < dp[i].length; j++) {
+      dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+    }
+  }
+  return dp[m - 1][n - 1];
 };
 ```
 
