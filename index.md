@@ -359,6 +359,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 7         | Reverse Integer                                      |
 | 9         | Palindrome Number                                    |
 | 20        | Valid Parentheses                                    |
+| 58        | Length of Last Word                                  |
 | 100       | Same Tree                                            |
 | 125       | Valid Palindrome                                     |
 | 199       | Binary Tree Right Side View                          |
@@ -485,6 +486,27 @@ var isValid = function (s) {
     }
   }
   return stack.length === 0;
+};
+```
+
+### 58. Length of Last Word
+
+```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function (s) {
+  s = s.trim();
+  let length = 0;
+  for (let i = s.length - 1; i >= 0; i--) {
+    if (s[i] !== ' ') {
+      length++;
+    } else {
+      return length;
+    }
+  }
+  return length;
 };
 ```
 
