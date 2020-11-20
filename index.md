@@ -361,6 +361,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 20        | Valid Parentheses                                    |
 | 58        | Length of Last Word                                  |
 | 62        | Unique Paths                                         |
+| 66        | Plus One                                             |
 | 100       | Same Tree                                            |
 | 125       | Valid Palindrome                                     |
 | 199       | Binary Tree Right Side View                          |
@@ -527,6 +528,39 @@ var uniquePaths = function (m, n) {
     }
   }
   return dp[m - 1][n - 1];
+};
+```
+
+### 66. Plus One
+
+```javascript
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function (digits) {
+  let lastIndex = digits.length - 1;
+  let lastNum = digits[lastIndex];
+  if (lastNum !== 9) {
+    digits[lastIndex] = lastNum + 1;
+    return digits;
+  }
+  // last num is 9
+  let carry = 1;
+  let results = [];
+  for (let i = digits.length - 1; i >= 0; i--) {
+    if (digits[i] === 9 && carry == 1) {
+      results.unshift(0);
+      carry = 1;
+    } else {
+      results.unshift(digits[i] + carry);
+      carry = 0;
+    }
+  }
+  if (carry === 1) {
+    results.unshift(1);
+  }
+  return results;
 };
 ```
 
