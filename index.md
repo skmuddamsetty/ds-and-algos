@@ -357,6 +357,8 @@ const findPairWithGivenSum = (A, sum) => {
 | --------- | ---------------------------------------------------- |
 | 1         | Two Sum                                              |
 | 7         | Reverse Integer                                      |
+| 9         | Palindrome Number                                    |
+| 20        | Valid Parentheses                                    |
 | 100       | Same Tree                                            |
 | 125       | Valid Palindrome                                     |
 | 199       | Binary Tree Right Side View                          |
@@ -371,6 +373,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 917       | Reverse Only Letters                                 |
 | 1046      | Last Stone Weight                                    |
 | 1119      | Remove Vowels from a String                          |
+| 1143      | Longest Common Subsequence                           |
 | 1185      | Day of the Week                                      |
 | 1213      | Intersection of Three Sorted Arrays                  |
 | 1299      | Replace Elements with Greatest Element on Right Side |
@@ -448,6 +451,40 @@ var isPalindrome = function (x) {
     x = Math.floor(x / 10);
   }
   return rem === temp;
+};
+```
+
+### 20. Valid Parentheses
+
+```javascript
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function (s) {
+  let map = {
+    '}': '{',
+    ')': '(',
+    ']': '[',
+  };
+  let stack = [];
+  for (let bracket of s) {
+    if (bracket === '(' || bracket === '[' || bracket === '{') {
+      stack.push(bracket);
+    } else {
+      if (bracket === ')' && stack[stack.length - 1] !== '(') {
+        return false;
+      }
+      if (bracket === '}' && stack[stack.length - 1] !== '{') {
+        return false;
+      }
+      if (bracket === ']' && stack[stack.length - 1] !== '[') {
+        return false;
+      }
+      stack.pop();
+    }
+  }
+  return stack.length === 0;
 };
 ```
 
@@ -847,6 +884,84 @@ class MaxBinaryHeap {
  */
 var removeVowels = function (S) {
   return S.replace(/[aeiou]/g, '');
+};
+```
+
+### 1143. Longest Common Subsequence
+
+```javascript
+/**
+ * @param {string} text1
+ * @param {string} text2
+ * @return {number}
+ */
+var longestCommonSubsequence = function (text1, text2) {
+  return longestCommonSubsequence_recursive(
+    text1,
+    text2,
+    text1.length,
+    text2.length
+  );
+};
+
+/**
+ * @param {string} text1
+ * @param {string} text2
+ * @param {number} m
+ * @param {number} n
+ * @return {number}
+ * For longer strings this method will give Time Limit Exceeded
+ */
+var longestCommonSubsequence_recursive = function (text1, text2, m, n) {
+  if (m === 0 || n === 0) {
+    return 0;
+  }
+  if (text1[m - 1] === text2[n - 1]) {
+    return 1 + longestCommonSubsequence_recursive(text1, text2, m - 1, n - 1);
+  } else {
+    return Math.max(
+      longestCommonSubsequence_recursive(text1, text2, m - 1, n),
+      longestCommonSubsequence_recursive(text1, text2, m, n - 1)
+    );
+  }
+};
+
+/**
+ * @param {string} text1
+ * @param {string} text2
+ * @return {number}
+ * This solution uses dynamic programming top down solution
+ */
+var longestCommonSubsequence = function (text1, text2) {
+  let dp = new Array(text1.length + 1)
+    .fill(0)
+    .map((e) => new Array(text2.length + 1).fill(-1));
+  longestCommonSubsequence_memoized(
+    text1,
+    text2,
+    text1.length,
+    text2.length,
+    dp
+  );
+  return dp[text1.length][text2.length];
+};
+
+var longestCommonSubsequence_memoized = function (text1, text2, m, n, dp) {
+  if (m === 0 || n === 0) {
+    return 0;
+  }
+  if (dp[m][n] !== -1) {
+    return dp[m][n];
+  }
+  if (text1[m - 1] === text2[n - 1]) {
+    return (dp[m][n] =
+      1 + longestCommonSubsequence_memoized(text1, text2, m - 1, n - 1, dp));
+  } else {
+    return (dp[m][n] = Math.max(
+      longestCommonSubsequence_memoized(text1, text2, m - 1, n, dp),
+      longestCommonSubsequence_memoized(text1, text2, m, n - 1, dp)
+    ));
+  }
 };
 ```
 
