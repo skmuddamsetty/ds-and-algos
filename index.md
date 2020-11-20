@@ -367,6 +367,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 125       | Valid Palindrome                                     |
 | 199       | Binary Tree Right Side View                          |
 | 242       | Valid Anagram                                        |
+| 252       | Meeting Rooms                                        |
 | 283       | Move Zeroes                                          |
 | 344       | Reverse String                                       |
 | 349       | Intersection of Two Arrays                           |
@@ -694,6 +695,27 @@ var isAnagram = function (s, t) {
     a1[char.charCodeAt(0) - 97]--;
     if (a1[char.charCodeAt(0) - 97] < 0) {
       return false;
+    }
+  }
+  return true;
+};
+```
+
+### 252. Meeting Rooms
+
+```javascript
+/**
+ * @param {number[][]} intervals
+ * @return {boolean}
+ */
+var canAttendMeetings = function (intervals) {
+  intervals.sort((a, b) => a[0] - b[0]);
+  let curr_meeting = intervals[0];
+  for (let i = 1; i < intervals.length; i++) {
+    if (curr_meeting[1] > intervals[i][0]) {
+      return false;
+    } else {
+      curr_meeting = intervals[i];
     }
   }
   return true;
