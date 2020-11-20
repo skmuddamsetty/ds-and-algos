@@ -367,6 +367,7 @@ const findPairWithGivenSum = (A, sum) => {
 | 125       | Valid Palindrome                                     |
 | 199       | Binary Tree Right Side View                          |
 | 242       | Valid Anagram                                        |
+| 283       | Move Zeroes                                          |
 | 344       | Reverse String                                       |
 | 349       | Intersection of Two Arrays                           |
 | 350       | Intersection of Two Arrays II                        |
@@ -696,6 +697,27 @@ var isAnagram = function (s, t) {
     }
   }
   return true;
+};
+```
+
+### 283. Move Zeroes
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var moveZeroes = function (nums) {
+  let pos = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      let temp = nums[i];
+      nums[i] = nums[pos];
+      nums[pos] = temp;
+      pos++;
+    }
+  }
+  return nums;
 };
 ```
 
